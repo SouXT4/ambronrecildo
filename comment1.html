@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Comments</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            overflow-x: hidden;
+        }
+
+        /* Glowing Text Animation */
+        @keyframes neonPulse {
+            0%, 100% {
+                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 
+                             0 0 30px #ff00ff, 0 0 40px #ff00ff;
+            }
+            50% {
+                text-shadow: 0 0 10px #ff0077, 0 0 20px #ff0077, 0 0 30px #ff0077, 
+                             0 0 40px #ff0077, 0 0 50px #ff0077;
+            }
+        }
+
+        /* Flickering Animation */
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                opacity: 0.5;
+            }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 45, 0.9);
+            box-shadow: 0 4px 10px rgba(255, 0, 255, 0.3);
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ff00ff;
+            margin: 0;
+            text-align: center;
+            padding: 20px 0;
+            animation: neonPulse 2s infinite alternate;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ff00ff;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* Main Section */
+        main {
+            margin-top: 120px;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        main h2 {
+            font-size: 2.5em;
+            color: #ff00ff;
+            margin-bottom: 20px;
+            animation: neonPulse 1.5s infinite alternate;
+        }
+
+        /* Form Styling */
+        form {
+            background: rgba(15, 15, 45, 0.95);
+            border: 2px solid #ff00ff;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+        }
+
+        form label {
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #555;
+            border-radius: 5px;
+            font-size: 1em;
+            background: #0f0c29;
+            color: #fff;
+        }
+
+        form input:focus, form textarea:focus {
+            outline: none;
+            border-color: #ff00ff;
+            box-shadow: 0 0 10px #ff00ff;
+        }
+
+        form button {
+            background: linear-gradient(45deg, #ff00ff, #ff0077);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+            transition: transform 0.3s ease;
+        }
+
+        form button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Comments Section */
+        .comments-section {
+            margin-top: 30px;
+            background: rgba(15, 15, 45, 0.95);
+            padding: 20px;
+            border: 2px solid #ff00ff;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+        }
+
+        .comments-section h3 {
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            color: #ff00ff;
+        }
+
+        .comment {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #444;
+            color: #fff;
+        }
+
+        .comment:last-child {
+            border-bottom: none;
+        }
+
+        .comment strong {
+            color: #ff00ff;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f0c29;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            box-shadow: 0 -4px 10px rgba(255, 0, 255, 0.3);
+        }
+
+        footer a {
+            color: #ff00ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ff0077;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Your Comments</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Homepage</a></li>
+                <li><a href="biodata.html">My Biodata</a></li>
+                <li><a href="portfolio1.html">My Portfolio</a></li>
+                <li><a href="video2.html">My Video</a></li>
+                <li><a href="comment1.html">Your Comments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="comment" rows="5" placeholder="Write your comment here..." required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Comments Section -->
+        <div class="comments-section" id="commentsSection">
+            <h3>Comments</h3>
+            <div class="comment">
+                <strong>John Doe:</strong>
+                <p>This page looks amazing! Great work!</p>
+            </div>
+            <div class="comment">
+                <strong>Jane Smith:</strong>
+                <p>I love the color theme and layout.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact me: <a href="mailto:Ambronron123@gmail.com">Ambronron123@gmail.com</a></p>
+    </footer>
+
+    <script>
+        document.getElementById("commentForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const comment = document.getElementById("comment").value;
+
+            const commentSection = document.getElementById("commentsSection");
+            const newComment = document.createElement("div");
+            newComment.classList.add("comment");
+            newComment.innerHTML = `<strong>${name}:</strong><p>${comment}</p>`;
+
+            commentSection.appendChild(newComment);
+
+            document.getElementById("commentForm").reset();
+        });
+    </script>
+	
+</body>
+</html>

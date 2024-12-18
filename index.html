@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My World</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1c1c1c, #0f0f0f);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Header Section */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.85);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #00fff6;
+            margin: 0;
+            text-shadow: 0 0 10px #00fff6, 0 0 20px #00fff6;
+            animation: glow 2s infinite alternate;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 10px 0 0;
+            margin: 0;
+            animation: slideUp 1s ease-out;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+            position: relative;
+            padding: 5px 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #f72585;
+            text-shadow: 0 0 10px #f72585, 0 0 20px #f72585;
+        }
+
+        nav ul li a::after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 0;
+            background: #f72585;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url('download.jpg') center/cover no-repeat;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            color: #00fff6;
+            text-shadow: 0 0 15px #00fff6, 0 0 30px #00fff6;
+            margin: 0;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin: 20px 0 40px;
+            color: #f5f5f5;
+        }
+
+        .hero-content a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #000;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #00fff6, #f72585);
+            box-shadow: 0 0 15px #00fff6, 0 0 20px #f72585;
+            transition: all 0.3s ease;
+        }
+
+        .hero-content a:hover {
+            background: linear-gradient(90deg, #f72585, #00fff6);
+            box-shadow: 0 0 20px #f72585, 0 0 30px #00fff6;
+            transform: scale(1.1);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            text-align: center;
+            background: #111;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #f72585;
+            text-shadow: 0 0 10px #f72585;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #e0e0e0;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        /* Footer Section */
+        footer {
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            animation: slideUp 1.5s ease-out;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: #00fff6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #f72585;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #00fff6, 0 0 20px #00fff6;
+            }
+            100% {
+                text-shadow: 0 0 20px #00fff6, 0 0 40px #00fff6;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to My Personal Web Page</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Homepage</a></li>
+                <li><a href="biodata.html">My Biodata</a></li>
+                <li><a href="portfolio1.html">My Portfolio</a></li>
+                <li><a href="video2.html">My Video</a></li>
+                <li><a href="comment1.html">Your Comments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to My World</h1>
+            <p>Step into the realistic of me.</p>
+            <p><a href="#about">Discover More</a></p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm Ambron Recildo, from Tenghilan, Tuaran Sabah. I am a student at UNIVERSITI MALAYSIA SABAH, taking the course Teknologi Multimedia. Let's explore the infinite possibilities together!</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact me: <a href="mailto:Ambronron123@gmail.com">Ambronron123@gmail.com</a></p>
+    </footer>
+</body>
+</html>

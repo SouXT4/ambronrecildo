@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Video JJ Showcase</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 2px solid rgba(0, 255, 255, 0.8);
+            z-index: 1000;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #00ffff;
+            margin: 0;
+            text-align: center;
+            padding: 20px 0;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+            animation: flicker 2s infinite alternate;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #00ffff;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+            position: relative;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* Glow Animation */
+        @keyframes glowPulse {
+            0%, 100% {
+                text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+            }
+            50% {
+                text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff;
+            }
+        }
+
+        /* Flicker Animation */
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
+        /* Main Section */
+        main {
+            margin-top: 120px;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        main section h2 {
+            font-size: 2.5em;
+            color: #fff;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+            animation: glowPulse 2s infinite;
+        }
+
+        main section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        /* Video Styling */
+        .responsive-video {
+            width: 100%;
+            max-width: 600px; /* Smaller video size */
+            height: auto;
+            border: 5px solid rgba(255, 0, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5), 0 0 40px rgba(255, 0, 255, 0.8);
+            margin-top: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .responsive-video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.8), 0 0 50px rgba(255, 0, 255, 1);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 50, 0.9);
+            color: #00ffff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            box-shadow: 0 -2px 10px rgba(0, 255, 255, 0.3);
+        }
+
+        footer a {
+            color: #00ffff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Slide Down Animation */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Cyberpunk Video</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Homepage</a></li>
+                <li><a href="biodata.html">My Biodata</a></li>
+                <li><a href="portfolio1.html">My Portfolio</a></li>
+                <li><a href="video2.html">My Video</a></li>
+                <li><a href="comment1.html">Your Comments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <section>
+            <h2>Welcome to My Video JJ Showcase</h2>
+            <video class="responsive-video" controls>
+                <source src="ron.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+		<section>
+            <h2>My Video Caroling</h2>
+            <video class="responsive-video" controls>
+                <source src="caroling.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact me: <a href="mailto:Ambronron123@gmail.com">Ambronron123@gmail.com</a></p>
+        <p>&copy; 2024 Cyberpunk Video Showcase</p>
+    </footer>
+</body>
+</html>

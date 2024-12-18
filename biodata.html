@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Biodata</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            background-size: 300% 300%;
+            animation: gradientShift 10s infinite;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 30, 0.9);
+            border-bottom: 2px solid rgba(0, 255, 255, 0.5);
+            z-index: 1000;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5em;
+            font-weight: 600;
+            color: #0ff;
+            margin: 0;
+            padding: 20px 0;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+        }
+/* Container for side-by-side layout */
+.info-container {
+    display: flex;
+    justify-content: center; /* Centers boxes horizontally */
+    gap: 20px; /* Adds space between boxes */
+    flex-wrap: wrap; /* Ensures responsiveness (stacking on small screens) */
+    margin: 30px auto;
+    max-width: 90%; /* Ensures it fits within the viewport */
+}
+
+/* Individual boxes */
+.info-box {
+    flex: 1 1 calc(50% - 40px); /* Flexible width for two boxes in one row */
+    max-width: 400px; /* Ensures boxes don't grow too large */
+    padding: 20px;
+    background: rgba(15, 15, 35, 0.8); /* Semi-transparent dark background */
+    border: 2px solid rgba(0, 255, 255, 0.7); /* Glowing neon border */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3); /* Neon glow effect */
+    text-align: left; /* Align text inside the box */
+    color: #fff;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    animation: glowPulse 2s infinite;
+}
+
+/* Pulse animation */
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.7), 0 0 40px rgba(0, 255, 255, 0.5);
+    }
+}
+
+/* Media query for smaller screens (stack boxes vertically) */
+@media (max-width: 768px) {
+    .info-container {
+        flex-direction: column; /* Stack boxes vertically */
+        gap: 15px;
+    }
+
+    .info-box {
+        flex: 1 1 100%; /* Full width for each box */
+    }
+}
+
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.7), 0 0 40px rgba(0, 255, 255, 0.5);
+    }
+}
+
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            font-size: 1.1em;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #0ff;
+        }
+
+        nav ul li a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #0ff;
+            transition: width 0.3s ease;
+            margin-top: 5px;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        main {
+            margin-top: 150px;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        main h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5em;
+            color: #fff;
+            text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080;
+            animation: flicker 2s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        main p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 5px 0;
+        }
+
+        /* Picture Frame */
+        .passport-frame {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            margin: 30px auto;
+            background: linear-gradient(135deg, #ff0080, #0ff);
+            animation: neonPulse 3s infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px #ff0080, 0 0 40px #0ff;
+        }
+
+        @keyframes neonPulse {
+            0%, 100% { box-shadow: 0 0 20px #ff0080, 0 0 40px #0ff; }
+            50% { box-shadow: 0 0 40px #ff0080, 0 0 60px #0ff; }
+        }
+
+        .passport-frame img {
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #000;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 10, 30, 0.9);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            border-top: 2px solid rgba(0, 255, 255, 0.5);
+        }
+
+        footer a {
+            color: #0ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ff0080;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Biodata</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Homepage</a></li>
+                <li><a href="biodata.html">My Biodata</a></li>
+                <li><a href="portfolio1.html">My Portfolio</a></li>
+                <li><a href="video2.html">My Video</a></li>
+                <li><a href="comment1.html">Your Comments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Personal Information</h2>
+        <div class="passport-frame">
+            <img src="amb.jpg" alt="Passport Photo">
+        </div>
+<div class="info-container">
+    <div class="info-box">
+		<p>About Me !!</p>
+        <p>Name: Ambron Recildo</p>
+        <p>Age: 22</p>
+        <p>Course: Technology Multimedia (UMSKAL)</p>
+    </div>
+    <div class="info-box">
+        <p>Education Background !!</p>
+        <p>School : Kolej Matrikulasi Labuan</p>
+        <p>Module II: Physics, Computer Science, Chemistry, and Mathematics</p>
+		<p>Years : Two Year Programme (PDT)</p>
+    </div>
+</div>
+
+
+    </main>
+
+    <footer>
+        <p>Contact me: <a href="mailto:Ambronron123@gmail.com">Ambronron123@gmail.com</a></p>
+    </footer>
+</body>
+</html>
